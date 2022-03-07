@@ -1,0 +1,12 @@
+{
+  "name": "kiku-leaflet",
+  "version": "0.0.1",
+  "description": "QGIS Leaflet wit geolocations and PWA",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -c-1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.0"
+  }
+}
