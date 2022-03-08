@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/qgis2web.css" />
     <link rel="stylesheet" href="css/fontawesome-all.min.css" />
     <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css" />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="manifest.json" />
     <style>
       #map {
         width: 1489px;
@@ -43,7 +43,7 @@
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {
-          navigator.serviceWorker.register("/sw.js").then(
+          navigator.serviceWorker.register("sw.js").then(
             function (registration) {
               // Registration was successful
               console.log(
