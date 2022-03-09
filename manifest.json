@@ -1,8 +1,9 @@
 {
-  "name": "Kiku-Leaflet as Progressive Web App",
-  "short_name": "Kiku",
-  "start_url": "index.html",
-  "scope": ".",
+  "name": "Kiku-Leaflet Localhost as Progressive Web App",
+  "id": "",
+  "short_name": "KikuLH",
+  "start_url": "/index.html",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#3F51B5",

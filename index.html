@@ -43,7 +43,7 @@
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {
-          navigator.serviceWorker.register("sw.js").then(
+          navigator.serviceWorker.register("/sw.js", { scope: "/" }).then(
             function (registration) {
               // Registration was successful
               console.log(
@@ -77,15 +77,15 @@
       }
       var map = L.map("map", {
         zoomControl: true,
-        maxZoom: 18,
-        minZoom: 12,
+        maxZoom: 16,
+        minZoom: 14,
         center: [48.149208, 11.461075], // MUH
       });
       map = map.fitBounds([
-        [48.12, 11.3],
+        [48.12, 11.39],
         [48.18, 11.52],
       ]);
-      //map.setMaxBounds(map.getBounds()); //MUH
+      map.setMaxBounds(map.getBounds()); //MUH
       var hash = new L.Hash(map);
       map.attributionControl.setPrefix(
         '<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>',
@@ -99,8 +99,8 @@
       map.createPane("pane_OpenStreetMap_0");
       map.getPane("pane_OpenStreetMap_0").style.zIndex = 400;
       var layer_OpenStreetMap_0 = L.tileLayer(
-        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-        //"tiles/{z}/{x}/{y}.png",
+        // "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "tiles/{z}/{x}/{y}.png",
         {
           pane: "pane_OpenStreetMap_0",
           opacity: 1.0,
