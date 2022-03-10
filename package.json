@@ -4,7 +4,7 @@
   "description": "QGIS Leaflet wit geolocations and PWA",
   "main": "index.html",
   "scripts": {
-    "start": "http-server -c-1"
+    "start": "http-server -c-1 -p 8888"
   },
   "devDependencies": {
     "http-server": "^14.1.0"

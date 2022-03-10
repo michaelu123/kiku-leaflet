@@ -1,7 +1,8 @@
-var CACHE_STATIC_NAME = "kiku-static-cache-v1";
-var CACHE_DYNAMIC_NAME = "kiku-dynamic-cache-v1";
+var CACHE_STATIC_NAME = "kiku-static-cache-v2";
+var CACHE_DYNAMIC_NAME = "kiku-dynamic-cache-v2";
 var urlsToCache = [
   "",
+  "/",
   "index.html",
   "manifest.json",
   "favicon.ico",
@@ -59,491 +60,70 @@ var urlsToCache = [
   "js/OSMBuildings-Leaflet.js",
   "js/qgis2web_expressions.js",
   "js/rbush.min.js",
+  "js/zip-full.min.js",
   "legend/kiku2_2.png",
   "legend/Route_ORS_1.png",
   "webfonts/fa-solid-900.ttf",
   "webfonts/fa-solid-900.woff2",
-  "tiles/14/8710/5683.png",
-  "tiles/14/8710/5684.png",
-  "tiles/14/8710/5685.png",
-  "tiles/14/8710/5686.png",
-  "tiles/14/8710/5687.png",
-  "tiles/14/8711/5683.png",
-  "tiles/14/8711/5684.png",
-  "tiles/14/8711/5685.png",
-  "tiles/14/8711/5686.png",
-  "tiles/14/8711/5687.png",
-  "tiles/14/8712/5683.png",
-  "tiles/14/8712/5684.png",
-  "tiles/14/8712/5685.png",
-  "tiles/14/8712/5686.png",
-  "tiles/14/8712/5687.png",
-  "tiles/14/8713/5683.png",
-  "tiles/14/8713/5684.png",
-  "tiles/14/8713/5685.png",
-  "tiles/14/8713/5686.png",
-  "tiles/14/8713/5687.png",
-  "tiles/14/8714/5683.png",
-  "tiles/14/8714/5684.png",
-  "tiles/14/8714/5685.png",
-  "tiles/14/8714/5686.png",
-  "tiles/14/8714/5687.png",
-  "tiles/14/8715/5683.png",
-  "tiles/14/8715/5684.png",
-  "tiles/14/8715/5685.png",
-  "tiles/14/8715/5686.png",
-  "tiles/14/8715/5687.png",
-  "tiles/14/8716/5683.png",
-  "tiles/14/8716/5684.png",
-  "tiles/14/8716/5685.png",
-  "tiles/14/8716/5686.png",
-  "tiles/14/8716/5687.png",
-  "tiles/16/34841/22732.png",
-  "tiles/16/34841/22733.png",
-  "tiles/16/34841/22734.png",
-  "tiles/16/34841/22735.png",
-  "tiles/16/34841/22736.png",
-  "tiles/16/34841/22737.png",
-  "tiles/16/34841/22738.png",
-  "tiles/16/34841/22739.png",
-  "tiles/16/34841/22740.png",
-  "tiles/16/34841/22741.png",
-  "tiles/16/34841/22742.png",
-  "tiles/16/34841/22743.png",
-  "tiles/16/34841/22744.png",
-  "tiles/16/34841/22745.png",
-  "tiles/16/34841/22746.png",
-  "tiles/16/34841/22747.png",
-  "tiles/16/34841/22748.png",
-  "tiles/16/34842/22732.png",
-  "tiles/16/34842/22733.png",
-  "tiles/16/34842/22734.png",
-  "tiles/16/34842/22735.png",
-  "tiles/16/34842/22736.png",
-  "tiles/16/34842/22737.png",
-  "tiles/16/34842/22738.png",
-  "tiles/16/34842/22739.png",
-  "tiles/16/34842/22740.png",
-  "tiles/16/34842/22741.png",
-  "tiles/16/34842/22742.png",
-  "tiles/16/34842/22743.png",
-  "tiles/16/34842/22744.png",
-  "tiles/16/34842/22745.png",
-  "tiles/16/34842/22746.png",
-  "tiles/16/34842/22747.png",
-  "tiles/16/34842/22748.png",
-  "tiles/16/34843/22732.png",
-  "tiles/16/34843/22733.png",
-  "tiles/16/34843/22734.png",
-  "tiles/16/34843/22735.png",
-  "tiles/16/34843/22736.png",
-  "tiles/16/34843/22737.png",
-  "tiles/16/34843/22738.png",
-  "tiles/16/34843/22739.png",
-  "tiles/16/34843/22740.png",
-  "tiles/16/34843/22741.png",
-  "tiles/16/34843/22742.png",
-  "tiles/16/34843/22743.png",
-  "tiles/16/34843/22744.png",
-  "tiles/16/34843/22745.png",
-  "tiles/16/34843/22746.png",
-  "tiles/16/34843/22747.png",
-  "tiles/16/34843/22748.png",
-  "tiles/16/34844/22732.png",
-  "tiles/16/34844/22733.png",
-  "tiles/16/34844/22734.png",
-  "tiles/16/34844/22735.png",
-  "tiles/16/34844/22736.png",
-  "tiles/16/34844/22737.png",
-  "tiles/16/34844/22738.png",
-  "tiles/16/34844/22739.png",
-  "tiles/16/34844/22740.png",
-  "tiles/16/34844/22741.png",
-  "tiles/16/34844/22742.png",
-  "tiles/16/34844/22743.png",
-  "tiles/16/34844/22744.png",
-  "tiles/16/34844/22745.png",
-  "tiles/16/34844/22746.png",
-  "tiles/16/34844/22747.png",
-  "tiles/16/34844/22748.png",
-  "tiles/16/34845/22732.png",
-  "tiles/16/34845/22733.png",
-  "tiles/16/34845/22734.png",
-  "tiles/16/34845/22735.png",
-  "tiles/16/34845/22736.png",
-  "tiles/16/34845/22737.png",
-  "tiles/16/34845/22738.png",
-  "tiles/16/34845/22739.png",
-  "tiles/16/34845/22740.png",
-  "tiles/16/34845/22741.png",
-  "tiles/16/34845/22742.png",
-  "tiles/16/34845/22743.png",
-  "tiles/16/34845/22744.png",
-  "tiles/16/34845/22745.png",
-  "tiles/16/34845/22746.png",
-  "tiles/16/34845/22747.png",
-  "tiles/16/34845/22748.png",
-  "tiles/16/34846/22732.png",
-  "tiles/16/34846/22733.png",
-  "tiles/16/34846/22734.png",
-  "tiles/16/34846/22735.png",
-  "tiles/16/34846/22736.png",
-  "tiles/16/34846/22737.png",
-  "tiles/16/34846/22738.png",
-  "tiles/16/34846/22739.png",
-  "tiles/16/34846/22740.png",
-  "tiles/16/34846/22741.png",
-  "tiles/16/34846/22742.png",
-  "tiles/16/34846/22743.png",
-  "tiles/16/34846/22744.png",
-  "tiles/16/34846/22745.png",
-  "tiles/16/34846/22746.png",
-  "tiles/16/34846/22747.png",
-  "tiles/16/34846/22748.png",
-  "tiles/16/34847/22732.png",
-  "tiles/16/34847/22733.png",
-  "tiles/16/34847/22734.png",
-  "tiles/16/34847/22735.png",
-  "tiles/16/34847/22736.png",
-  "tiles/16/34847/22737.png",
-  "tiles/16/34847/22738.png",
-  "tiles/16/34847/22739.png",
-  "tiles/16/34847/22740.png",
-  "tiles/16/34847/22741.png",
-  "tiles/16/34847/22742.png",
-  "tiles/16/34847/22743.png",
-  "tiles/16/34847/22744.png",
-  "tiles/16/34847/22745.png",
-  "tiles/16/34847/22746.png",
-  "tiles/16/34847/22747.png",
-  "tiles/16/34847/22748.png",
-  "tiles/16/34848/22732.png",
-  "tiles/16/34848/22733.png",
-  "tiles/16/34848/22734.png",
-  "tiles/16/34848/22735.png",
-  "tiles/16/34848/22736.png",
-  "tiles/16/34848/22737.png",
-  "tiles/16/34848/22738.png",
-  "tiles/16/34848/22739.png",
-  "tiles/16/34848/22740.png",
-  "tiles/16/34848/22741.png",
-  "tiles/16/34848/22742.png",
-  "tiles/16/34848/22743.png",
-  "tiles/16/34848/22744.png",
-  "tiles/16/34848/22745.png",
-  "tiles/16/34848/22746.png",
-  "tiles/16/34848/22747.png",
-  "tiles/16/34848/22748.png",
-  "tiles/16/34849/22732.png",
-  "tiles/16/34849/22733.png",
-  "tiles/16/34849/22734.png",
-  "tiles/16/34849/22735.png",
-  "tiles/16/34849/22736.png",
-  "tiles/16/34849/22737.png",
-  "tiles/16/34849/22738.png",
-  "tiles/16/34849/22739.png",
-  "tiles/16/34849/22740.png",
-  "tiles/16/34849/22741.png",
-  "tiles/16/34849/22742.png",
-  "tiles/16/34849/22743.png",
-  "tiles/16/34849/22744.png",
-  "tiles/16/34849/22745.png",
-  "tiles/16/34849/22746.png",
-  "tiles/16/34849/22747.png",
-  "tiles/16/34849/22748.png",
-  "tiles/16/34850/22732.png",
-  "tiles/16/34850/22733.png",
-  "tiles/16/34850/22734.png",
-  "tiles/16/34850/22735.png",
-  "tiles/16/34850/22736.png",
-  "tiles/16/34850/22737.png",
-  "tiles/16/34850/22738.png",
-  "tiles/16/34850/22739.png",
-  "tiles/16/34850/22740.png",
-  "tiles/16/34850/22741.png",
-  "tiles/16/34850/22742.png",
-  "tiles/16/34850/22743.png",
-  "tiles/16/34850/22744.png",
-  "tiles/16/34850/22745.png",
-  "tiles/16/34850/22746.png",
-  "tiles/16/34850/22747.png",
-  "tiles/16/34850/22748.png",
-  "tiles/16/34851/22732.png",
-  "tiles/16/34851/22733.png",
-  "tiles/16/34851/22734.png",
-  "tiles/16/34851/22735.png",
-  "tiles/16/34851/22736.png",
-  "tiles/16/34851/22737.png",
-  "tiles/16/34851/22738.png",
-  "tiles/16/34851/22739.png",
-  "tiles/16/34851/22740.png",
-  "tiles/16/34851/22741.png",
-  "tiles/16/34851/22742.png",
-  "tiles/16/34851/22743.png",
-  "tiles/16/34851/22744.png",
-  "tiles/16/34851/22745.png",
-  "tiles/16/34851/22746.png",
-  "tiles/16/34851/22747.png",
-  "tiles/16/34851/22748.png",
-  "tiles/16/34852/22732.png",
-  "tiles/16/34852/22733.png",
-  "tiles/16/34852/22734.png",
-  "tiles/16/34852/22735.png",
-  "tiles/16/34852/22736.png",
-  "tiles/16/34852/22737.png",
-  "tiles/16/34852/22738.png",
-  "tiles/16/34852/22739.png",
-  "tiles/16/34852/22740.png",
-  "tiles/16/34852/22741.png",
-  "tiles/16/34852/22742.png",
-  "tiles/16/34852/22743.png",
-  "tiles/16/34852/22744.png",
-  "tiles/16/34852/22745.png",
-  "tiles/16/34852/22746.png",
-  "tiles/16/34852/22747.png",
-  "tiles/16/34852/22748.png",
-  "tiles/16/34853/22732.png",
-  "tiles/16/34853/22733.png",
-  "tiles/16/34853/22734.png",
-  "tiles/16/34853/22735.png",
-  "tiles/16/34853/22736.png",
-  "tiles/16/34853/22737.png",
-  "tiles/16/34853/22738.png",
-  "tiles/16/34853/22739.png",
-  "tiles/16/34853/22740.png",
-  "tiles/16/34853/22741.png",
-  "tiles/16/34853/22742.png",
-  "tiles/16/34853/22743.png",
-  "tiles/16/34853/22744.png",
-  "tiles/16/34853/22745.png",
-  "tiles/16/34853/22746.png",
-  "tiles/16/34853/22747.png",
-  "tiles/16/34853/22748.png",
-  "tiles/16/34854/22732.png",
-  "tiles/16/34854/22733.png",
-  "tiles/16/34854/22734.png",
-  "tiles/16/34854/22735.png",
-  "tiles/16/34854/22736.png",
-  "tiles/16/34854/22737.png",
-  "tiles/16/34854/22738.png",
-  "tiles/16/34854/22739.png",
-  "tiles/16/34854/22740.png",
-  "tiles/16/34854/22741.png",
-  "tiles/16/34854/22742.png",
-  "tiles/16/34854/22743.png",
-  "tiles/16/34854/22744.png",
-  "tiles/16/34854/22745.png",
-  "tiles/16/34854/22746.png",
-  "tiles/16/34854/22747.png",
-  "tiles/16/34854/22748.png",
-  "tiles/16/34855/22732.png",
-  "tiles/16/34855/22733.png",
-  "tiles/16/34855/22734.png",
-  "tiles/16/34855/22735.png",
-  "tiles/16/34855/22736.png",
-  "tiles/16/34855/22737.png",
-  "tiles/16/34855/22738.png",
-  "tiles/16/34855/22739.png",
-  "tiles/16/34855/22740.png",
-  "tiles/16/34855/22741.png",
-  "tiles/16/34855/22742.png",
-  "tiles/16/34855/22743.png",
-  "tiles/16/34855/22744.png",
-  "tiles/16/34855/22745.png",
-  "tiles/16/34855/22746.png",
-  "tiles/16/34855/22747.png",
-  "tiles/16/34855/22748.png",
-  "tiles/16/34856/22732.png",
-  "tiles/16/34856/22733.png",
-  "tiles/16/34856/22734.png",
-  "tiles/16/34856/22735.png",
-  "tiles/16/34856/22736.png",
-  "tiles/16/34856/22737.png",
-  "tiles/16/34856/22738.png",
-  "tiles/16/34856/22739.png",
-  "tiles/16/34856/22740.png",
-  "tiles/16/34856/22741.png",
-  "tiles/16/34856/22742.png",
-  "tiles/16/34856/22743.png",
-  "tiles/16/34856/22744.png",
-  "tiles/16/34856/22745.png",
-  "tiles/16/34856/22746.png",
-  "tiles/16/34856/22747.png",
-  "tiles/16/34856/22748.png",
-  "tiles/16/34857/22732.png",
-  "tiles/16/34857/22733.png",
-  "tiles/16/34857/22734.png",
-  "tiles/16/34857/22735.png",
-  "tiles/16/34857/22736.png",
-  "tiles/16/34857/22737.png",
-  "tiles/16/34857/22738.png",
-  "tiles/16/34857/22739.png",
-  "tiles/16/34857/22740.png",
-  "tiles/16/34857/22741.png",
-  "tiles/16/34857/22742.png",
-  "tiles/16/34857/22743.png",
-  "tiles/16/34857/22744.png",
-  "tiles/16/34857/22745.png",
-  "tiles/16/34857/22746.png",
-  "tiles/16/34857/22747.png",
-  "tiles/16/34857/22748.png",
-  "tiles/16/34858/22732.png",
-  "tiles/16/34858/22733.png",
-  "tiles/16/34858/22734.png",
-  "tiles/16/34858/22735.png",
-  "tiles/16/34858/22736.png",
-  "tiles/16/34858/22737.png",
-  "tiles/16/34858/22738.png",
-  "tiles/16/34858/22739.png",
-  "tiles/16/34858/22740.png",
-  "tiles/16/34858/22741.png",
-  "tiles/16/34858/22742.png",
-  "tiles/16/34858/22743.png",
-  "tiles/16/34858/22744.png",
-  "tiles/16/34858/22745.png",
-  "tiles/16/34858/22746.png",
-  "tiles/16/34858/22747.png",
-  "tiles/16/34858/22748.png",
-  "tiles/16/34859/22732.png",
-  "tiles/16/34859/22733.png",
-  "tiles/16/34859/22734.png",
-  "tiles/16/34859/22735.png",
-  "tiles/16/34859/22736.png",
-  "tiles/16/34859/22737.png",
-  "tiles/16/34859/22738.png",
-  "tiles/16/34859/22739.png",
-  "tiles/16/34859/22740.png",
-  "tiles/16/34859/22741.png",
-  "tiles/16/34859/22742.png",
-  "tiles/16/34859/22743.png",
-  "tiles/16/34859/22744.png",
-  "tiles/16/34859/22745.png",
-  "tiles/16/34859/22746.png",
-  "tiles/16/34859/22747.png",
-  "tiles/16/34859/22748.png",
-  "tiles/16/34860/22732.png",
-  "tiles/16/34860/22733.png",
-  "tiles/16/34860/22734.png",
-  "tiles/16/34860/22735.png",
-  "tiles/16/34860/22736.png",
-  "tiles/16/34860/22737.png",
-  "tiles/16/34860/22738.png",
-  "tiles/16/34860/22739.png",
-  "tiles/16/34860/22740.png",
-  "tiles/16/34860/22741.png",
-  "tiles/16/34860/22742.png",
-  "tiles/16/34860/22743.png",
-  "tiles/16/34860/22744.png",
-  "tiles/16/34860/22745.png",
-  "tiles/16/34860/22746.png",
-  "tiles/16/34860/22747.png",
-  "tiles/16/34860/22748.png",
-  "tiles/16/34861/22732.png",
-  "tiles/16/34861/22733.png",
-  "tiles/16/34861/22734.png",
-  "tiles/16/34861/22735.png",
-  "tiles/16/34861/22736.png",
-  "tiles/16/34861/22737.png",
-  "tiles/16/34861/22738.png",
-  "tiles/16/34861/22739.png",
-  "tiles/16/34861/22740.png",
-  "tiles/16/34861/22741.png",
-  "tiles/16/34861/22742.png",
-  "tiles/16/34861/22743.png",
-  "tiles/16/34861/22744.png",
-  "tiles/16/34861/22745.png",
-  "tiles/16/34861/22746.png",
-  "tiles/16/34861/22747.png",
-  "tiles/16/34861/22748.png",
-  "tiles/16/34862/22732.png",
-  "tiles/16/34862/22733.png",
-  "tiles/16/34862/22734.png",
-  "tiles/16/34862/22735.png",
-  "tiles/16/34862/22736.png",
-  "tiles/16/34862/22737.png",
-  "tiles/16/34862/22738.png",
-  "tiles/16/34862/22739.png",
-  "tiles/16/34862/22740.png",
-  "tiles/16/34862/22741.png",
-  "tiles/16/34862/22742.png",
-  "tiles/16/34862/22743.png",
-  "tiles/16/34862/22744.png",
-  "tiles/16/34862/22745.png",
-  "tiles/16/34862/22746.png",
-  "tiles/16/34862/22747.png",
-  "tiles/16/34862/22748.png",
-  "tiles/16/34863/22732.png",
-  "tiles/16/34863/22733.png",
-  "tiles/16/34863/22734.png",
-  "tiles/16/34863/22735.png",
-  "tiles/16/34863/22736.png",
-  "tiles/16/34863/22737.png",
-  "tiles/16/34863/22738.png",
-  "tiles/16/34863/22739.png",
-  "tiles/16/34863/22740.png",
-  "tiles/16/34863/22741.png",
-  "tiles/16/34863/22742.png",
-  "tiles/16/34863/22743.png",
-  "tiles/16/34863/22744.png",
-  "tiles/16/34863/22745.png",
-  "tiles/16/34863/22746.png",
-  "tiles/16/34863/22747.png",
-  "tiles/16/34863/22748.png",
-  "tiles/16/34864/22732.png",
-  "tiles/16/34864/22733.png",
-  "tiles/16/34864/22734.png",
-  "tiles/16/34864/22735.png",
-  "tiles/16/34864/22736.png",
-  "tiles/16/34864/22737.png",
-  "tiles/16/34864/22738.png",
-  "tiles/16/34864/22739.png",
-  "tiles/16/34864/22740.png",
-  "tiles/16/34864/22741.png",
-  "tiles/16/34864/22742.png",
-  "tiles/16/34864/22743.png",
-  "tiles/16/34864/22744.png",
-  "tiles/16/34864/22745.png",
-  "tiles/16/34864/22746.png",
-  "tiles/16/34864/22747.png",
-  "tiles/16/34864/22748.png",
-  "tiles/16/34865/22732.png",
-  "tiles/16/34865/22733.png",
-  "tiles/16/34865/22734.png",
-  "tiles/16/34865/22735.png",
-  "tiles/16/34865/22736.png",
-  "tiles/16/34865/22737.png",
-  "tiles/16/34865/22738.png",
-  "tiles/16/34865/22739.png",
-  "tiles/16/34865/22740.png",
-  "tiles/16/34865/22741.png",
-  "tiles/16/34865/22742.png",
-  "tiles/16/34865/22743.png",
-  "tiles/16/34865/22744.png",
-  "tiles/16/34865/22745.png",
-  "tiles/16/34865/22746.png",
-  "tiles/16/34865/22747.png",
-  "tiles/16/34865/22748.png",
 ];
+
+self.importScripts("js/zip-full.min.js");
 
 self.addEventListener("install", function (event) {
   // Perform install steps
+  console.log("sw install", event);
   event.waitUntil(
-    caches.open(CACHE_STATIC_NAME).then(function (cache) {
+    caches.open(CACHE_STATIC_NAME).then(async function (cache) {
       console.log("Opened cache");
-      return cache.addAll(urlsToCache);
+      let dataResp = await fetch("tiles/tiles.zip");
+      if (dataResp) {
+        console.log("2inst", dataResp);
+        let blob = await dataResp.blob();
+        console.log("3inst", blob);
+        zip.configure({
+          useWebWorkers: false,
+        });
+        let br = new zip.BlobReader(blob);
+        br.useWebWorkers = false;
+        let zr = new zip.ZipReader(br);
+        entries = await zr.getEntries();
+        for (let entry of entries) {
+          if (!entry.filename.endsWith(".png")) continue;
+          let exists = await cache.match("/tiles/" + entry.filename);
+          if (exists) {
+            continue;
+          }
+          let data = await entry.getData(new zip.BlobWriter());
+          caches.open(CACHE_STATIC_NAME).then(async function (cache) {
+            let resp = new Response(data, {
+              status: 200,
+              statusText: "OK",
+              headers: { "Content-Type": "image/png" },
+            });
+            await cache.put("/tiles/" + entry.filename, resp);
+          });
+        }
+      }
+
+      console.log("addAll1");
+      await cache.addAll(urlsToCache);
+      console.log("addAll2");
     }),
   );
 });
 
 self.addEventListener("activate", function (event) {
+  console.log("sw activated", event);
   event.waitUntil(
     caches.keys().then(function (cacheNames) {
       return Promise.all(
         cacheNames.map(function (cacheName) {
           if (
+            cacheName.startsWith("kiku-") &&
             cacheName !== CACHE_STATIC_NAME &&
             cacheName !== CACHE_DYNAMIC_NAME
           ) {
+            console.log("delete cache ", cacheName);
             return caches.delete(cacheName);
           }
         }),
@@ -553,33 +133,38 @@ self.addEventListener("activate", function (event) {
 });
 
 self.addEventListener("fetch", function (event) {
+  console.log("fetch", event.request.url);
   event.respondWith(
     caches.match(event.request).then(function (response) {
       // Cache hit - return response
       if (response) {
         return response;
       }
-      /* 
-      return fetch(event.request).then(function (response) {
-        // Check if we received a valid response
-        if (!response || response.status !== 200 || response.type !== "basic") {
+      return fetch(event.request)
+        .then(function (response) {
+          // Check if we received a valid response
+          if (
+            !response ||
+            response.status !== 200 ||
+            response.type !== "basic"
+          ) {
+            return response;
+          }
+          // IMPORTANT: Clone the response. A response is a stream
+          // and because we want the browser to consume the response
+          // as well as the cache consuming the response, we need
+          // to clone it so we have two streams.
+          var responseToCache = response.clone();
+
+          caches.open(CACHE_DYNAMIC_NAME).then(function (cache) {
+            cache.put(event.request, responseToCache);
+          });
+
           return response;
-        }
-        // IMPORTANT: Clone the response. A response is a stream
-        // and because we want the browser to consume the response
-        // as well as the cache consuming the response, we need
-        // to clone it so we have two streams.
-        var responseToCache = response.clone();
-
-        caches.open(CACHE_DYNAMIC_NAME).then(function (cache) {
-          cache.put(event.request, responseToCache);
+        })
+        .catch(function (reason) {
+          return null;
         });
-
-        return response;
-      });
-  */
     }),
   );
 });
-
-//

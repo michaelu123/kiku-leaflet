@@ -17,8 +17,8 @@
     <link rel="manifest" href="manifest.json" />
     <style>
       #map {
-        width: 1489px;
-        height: 868px;
+        width: 98vw;
+        height: 98vh;
       }
     </style>
     <title></title>
@@ -40,6 +40,8 @@
     <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
     <script src="data/Route_ORS_1.js"></script>
     <script src="data/kiku2_2.js"></script>
+    <script type="text/javascript" src="js/zip-full.min.js"></script>
+
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {
@@ -85,7 +87,10 @@
         [48.12, 11.39],
         [48.18, 11.52],
       ]);
-      map.setMaxBounds(map.getBounds()); //MUH
+      map.setMaxBounds([
+        [48.12, 11.38],
+        [48.18, 11.53],
+      ]); //MUH
       var hash = new L.Hash(map);
       map.attributionControl.setPrefix(
         '<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>',
@@ -202,7 +207,8 @@
       map.getPane("pane_Route_ORS_1").style["mix-blend-mode"] = "normal";
       var layer_Route_ORS_1 = new L.geoJson(json_Route_ORS_1, {
         attribution: "",
-        interactive: true,
+        // interactive: true, // MUH
+        interactive: false,
         dataVar: "json_Route_ORS_1",
         layerName: "layer_Route_ORS_1",
         pane: "pane_Route_ORS_1",
